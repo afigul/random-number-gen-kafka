@@ -1,6 +1,6 @@
 micronaut:
   application:
-    name: randomNumberGen
+    name: randomNumberGenKafka
   metrics:
     export:
       prometheus:
