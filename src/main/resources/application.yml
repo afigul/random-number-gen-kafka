@@ -9,7 +9,8 @@ micronaut:
         step: PT1M
     enabled: true
 
-kafka.bootstrap.servers: localhost:9092
+#kafka.bootstrap.servers: localhost:9092
+kafka.bootstrap.servers: host.docker.internal:9092
 
 kubernetes:
   client:
