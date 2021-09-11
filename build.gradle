@@ -50,6 +50,6 @@ java {
 
 jib {
     to {
-        image = "docker.io/lehwwmcrnjnhzjaglr/random-number-gen"
+        image = "docker.io/lehwwmcrnjnhzjaglr/random-number-gen-kafka"
     }
 }

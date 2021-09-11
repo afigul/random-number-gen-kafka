@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "random-number-gen"
+  name: "random-number-gen-kafka"
 spec:
   selector:
     matchLabels:
-      app: "random-number-gen"
+      app: "random-number-gen-kafka"
   template:
     metadata:
       labels:
-        app: "random-number-gen"
+        app: "random-number-gen-kafka"
     spec:
       containers:
-        - name: "random-number-gen"
-          image: "docker.io/lehwwmcrnjnhzjaglr/random-number-gen"
+        - name: "random-number-gen-kafka"
+          image: "docker.io/lehwwmcrnjnhzjaglr/random-number-gen-kafka"
           ports:
             - name: http
               containerPort: 8080
@@ -34,10 +34,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: "random-number-gen"
+  name: "random-number-gen-kafka"
 spec:
   selector:
-    app: "random-number-gen"
+    app: "random-number-gen-kafka"
   type: LoadBalancer
   ports:
     - protocol: "TCP"

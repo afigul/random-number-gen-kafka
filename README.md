@@ -1,4 +1,4 @@
-# Random Number Generator
+# Random Number Generator Kafka
 
 This random Number Generator generates a random number and sends it to a kafka topic with key: <number of created messages> and value: <random number as string>
 
@@ -8,12 +8,21 @@ install homebrew: https://brew.sh/
 
 Install Java, Docker, IntelliJ, k9s, ...
 
-    brew install openjdk k9s gradle kubernetes-cli micronaut
+    brew install openjdk k9s kafka gradle kubernetes-cli micronaut
     brew install --cask intellij-idea-ce docker
     
-Get a docker account and setup the "random-number-gen" repo
+Get a docker account and setup the "random-number-gen-kafka" repo
 
 Configure docker to run kubernetes (k8s) -> See Settings of Docker
+
+start zookeeper
+
+    zookeeper-server-start kafka-config/zookeeper.properties &
+
+start kafka
+    
+    kafka-server-start kafka-config/server.properties &
+
 
 change build.gradle and k8s.yml to fit your docker credentials
 
@@ -27,7 +36,7 @@ See log form pod
 
     kubectl get pods -n dev
     
-    kubectl logs random-number-gen-<something-something> -n dev -f
+    kubectl logs random-number-gen-kafka-<something-something> -n dev -f
 
 
 ## Micronaut 3.0.1 Documentation
