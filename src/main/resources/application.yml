@@ -1,0 +1,16 @@
+micronaut:
+  application:
+    name: randomNumberGen
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+        descriptions: true
+        step: PT1M
+    enabled: true
+
+kafka.bootstrap.servers: localhost:9092
+
+kubernetes:
+  client:
+    namespace: dev
