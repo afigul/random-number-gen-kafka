@@ -39,6 +39,10 @@ See log form pod
     kubectl logs random-number-gen-kafka-<something-something> -n dev -f
 
 
+Stop Kafka
+
+    zookeeper-server-stop && kafka-server-stop
+
 ## Micronaut 3.0.1 Documentation
 
 - [User Guide](https://docs.micronaut.io/3.0.1/guide/index.html)
